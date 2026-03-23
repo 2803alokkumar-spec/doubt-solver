@@ -1,0 +1,32 @@
+<!doctype html>
+<html>
+<head>
+  <title>All Problems</title>
+</head>
+<body>
+
+  <h1>All Problems</h1>
+
+  {% for p, answers in data %}
+    <div>
+
+      <h3>{{ p[1] }}</h3>
+
+      <!-- Answers -->
+      {% for a in answers %}
+        <p>➡️ {{ a[0] }}</p>
+      {% endfor %}
+
+      <!-- Answer Form -->
+      <form action="/answer/{{ p[0] }}" method="POST">
+        <input type="text" name="answer" placeholder="Write your answer" required>
+        <button type="submit">Submit</button>
+      </form>
+
+      <hr>
+
+    </div>
+  {% endfor %}
+
+</body>
+</html>
