@@ -1,0 +1,24 @@
+<!doctype html>
+<html>
+<head>
+    <title>My Problems</title>
+</head>
+<body>
+    <h1>{{ username }}'s Problems</h1>
+
+    {% for problem, answers in data %}
+        <div style="border:1px solid #000; padding:10px; margin:10px;">
+            <p><strong>Q:</strong> {{ problem[2] }}</p>
+            <p><strong>Answers:</strong></p>
+            <ul>
+                {% for ans in answers %}
+                    <li>{{ ans[0] }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+    {% endfor %}
+
+    <p><a href="/share?username={{ username }}">Share another problem</a></p>
+    <p><a href="/view">View All Problems</a></p>
+</body>
+</html>
