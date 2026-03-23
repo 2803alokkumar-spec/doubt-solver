@@ -1,27 +1,14 @@
 <!doctype html>
 <html>
 <head>
-  <title>Doubt Solver</title>
+    <title>Doubt Solver</title>
 </head>
 <body>
-
-  <h1>Doubt Solving Website</h1>
-
-  <button onclick="window.location.href='/share'">
-    Share Problem
-  </button>
-
-  <br><br>
-
-  <button onclick="window.location.href='/view'">
-    View Problems
-  </button>
-
-  <br><br>
-
-  <button onclick="window.location.href='/my'">
-    My Problem
-  </button>
-
+    <h1>Welcome to Doubt Solver</h1>
+    <p>Enter your name to continue:</p>
+    <form action="/share" method="get">
+        <input type="text" name="username" placeholder="Enter your name" required>
+        <button type="submit">Go to Share Page</button>
+    </form>
 </body>
 </html>

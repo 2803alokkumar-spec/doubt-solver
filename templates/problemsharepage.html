@@ -1,21 +1,19 @@
 <!doctype html>
 <html>
 <head>
-  <title>Share Problem</title>
+    <title>Share Problem</title>
 </head>
 <body>
+    <h1>Share your Problem</h1>
+    <form action="/submit" method="post">
+        <!-- Hidden field for username -->
+        <input type="hidden" name="username" value="{{ request.args.get('username') }}">
+        
+        <textarea name="problem" placeholder="Write your problem here" required></textarea><br><br>
+        <button type="submit">Submit Problem</button>
+    </form>
 
-  <h1>Share Your Problem</h1>
-
-  <form action="/submit" method="POST">
-
-    <textarea name="problem" rows="5" cols="40" placeholder="Enter your problem" required></textarea>
-
-    <br><br>
-
-    <button type="submit">Submit</button>
-
-  </form>
-
+    <p><a href="/my?username={{ request.args.get('username') }}">My Problems</a></p>
+    <p><a href="/view">View All Problems</a></p>
 </body>
 </html>
